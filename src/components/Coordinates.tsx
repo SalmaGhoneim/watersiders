@@ -31,7 +31,7 @@ const Coordinates = (): JSX.Element => {
     }
     return (
         <div className="coordinates">
-            <h3>{INPUT_TITLE}</h3>
+            <span>{INPUT_TITLE}</span>
                 <div className="input">
                     <input
                         onKeyDown={inputKeyDownHandler}

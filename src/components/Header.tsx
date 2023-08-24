@@ -4,7 +4,7 @@ const Header = (): JSX.Element => {
     return (
         <div className="header">
             <div className="content">
-                <h1>{NAME}</h1>
+                <span>{NAME}</span>
                 <span>{MOI}</span>
             </div>
         </div>

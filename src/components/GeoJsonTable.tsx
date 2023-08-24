@@ -13,7 +13,7 @@ const GeoJsonTable = (): JSX.Element => {
     return (
         <div className={`tableContainer  ${!geoDataLoading && geoData ? 'visible': ''}`} data-testid="table-id">
             <div className="tableHeader">
-                <h3>{RAW_DATA}</h3>
+                <h4>{RAW_DATA}</h4>
                 <PickFeatures pickedFeatures={pickedFeatures} setPickedFeatures={setPickedFeatures}/>
             </div>
             <div className="table">

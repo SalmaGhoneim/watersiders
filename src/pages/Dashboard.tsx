@@ -26,8 +26,8 @@ const Dashboard = (): JSX.Element => {
         <div className="dashboard">
             <Header />
             <div className="geo panel">
-                <h1>{TITLE}</h1>
-                <h4>{SUBTITLE}</h4>
+                <h4>{TITLE}</h4>
+                <span className="subtitle">{SUBTITLE}</span>
                 <Coordinates />
                 <button onClick={goToTable} className={`rawData ${!geoDataLoading && geoData ? 'visible' : ''}`}>{SEE_RAW_DATA}{Arrowsvg}</button>
                 <Map />
