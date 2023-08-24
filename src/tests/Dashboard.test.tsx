@@ -53,6 +53,7 @@ describe('Dashboard tests', () => {
         expect(incompleteMessage).not.toBeInTheDocument();
         expect(map).toBeInTheDocument();
         expect(table).toBeInTheDocument();
+        // count table rows to be 3 as mock data other than th
     });
 
     // TODO
@@ -62,5 +63,7 @@ describe('Dashboard tests', () => {
     // TODO
     // it('should display error if axios returns 400', async () => {
     // });
+
+    //TODO snapshot compare
 
 });

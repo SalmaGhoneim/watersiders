@@ -1,6 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useContext, useState } from "react";
 import { GeoDataContext } from "../contexts/GeoDataContext";
 import { INPUT_TITLE, LATITUDE, LOCATE, LONGITUDE } from "../constants";
+import { isEnter, stripFloatInput } from "../utils";
 
 const Coordinates = (): JSX.Element => {
     const [localCoordinateX, setLocalCoordinateX] = useState("");
@@ -8,20 +9,16 @@ const Coordinates = (): JSX.Element => {
 
     const { setCoordinateX, setCoordinateY } = useContext(GeoDataContext);
 
-    const stripInput = (value: string): string => {
-        return value.replace(/[^0-9|.]/g, "");
-    }
-
     const coordinateXHandler = (e: ChangeEvent<HTMLInputElement>): void => {
-        setLocalCoordinateX(stripInput(e.target.value));
+        setLocalCoordinateX(stripFloatInput(e.target.value));
     }
 
     const coordinateYHandler = (e: ChangeEvent<HTMLInputElement>): void => {
-        setLocalCoordinateY(stripInput(e.target.value));
+        setLocalCoordinateY(stripFloatInput(e.target.value));
     }
 
     const inputKeyDownHandler = (e: KeyboardEvent<HTMLInputElement>): void => {
-        if (e.key === "Enter") {
+        if (isEnter(e)) {
             fetchDataHandler();
         }
     }

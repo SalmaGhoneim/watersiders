@@ -35,7 +35,6 @@ export const GeoDataContextProvider = (props: IGeoDataContextProvider) => {
     const [geoDataLoading, setGeoDataLoading] = useState(false);
     const [geoDataError, setGeoDataError] = useState("");
 
-
     const fetchData = useCallback(
         (): void => {
             if(isNaN(coordinateX) || isNaN(coordinateY)) return;
