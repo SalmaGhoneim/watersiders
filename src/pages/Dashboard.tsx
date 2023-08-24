@@ -3,7 +3,11 @@ import Coordinates from "../components/Coordinates";
 import GeoJsonTable from "../components/GeoJsonTable";
 import Map from "../components/Map";
 import { GeoDataContext } from "../contexts/GeoDataContext";
-import { CV, CV_URL, LINKEDIN_ACCOUNT, LINKEDIN_ACCOUNT_URL, MEDIUM_ACCOUNT, MEDIUM_ACCOUNT_URL, MOI, NAME, SEE_RAW_DATA, SUBTITLE, TITLE } from "../constants";
+import { SEE_RAW_DATA, SUBTITLE, TITLE } from "../constants";
+import '../Dashboard.css';
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+
 
 const Arrowsvg = (<svg height="800px" width="800px" version="1.1" id="Layer_1" viewBox="0 0 330 330">
     <path id="XMLID_225_" d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393
@@ -21,12 +25,7 @@ const Dashboard = (): JSX.Element => {
     
     return (
         <div className="dashboard">
-            <div className="header">
-                <div className="content">
-                    <h1>{NAME}</h1>
-                    <span>{MOI}</span>
-                </div>
-            </div>
+            <Header />
             <div className="geo panel">
                 <h1>{TITLE}</h1>
                 <h4>{SUBTITLE}</h4>
@@ -37,17 +36,7 @@ const Dashboard = (): JSX.Element => {
             <div ref={tableRef}>
                 <GeoJsonTable />
             </div>
-            <div className="footer">
-                <div className="content">
-                    <span>{NAME}</span>
-                    <div className="links">
-                        <a target="_blank" rel="noreferrer" href={LINKEDIN_ACCOUNT_URL}>{LINKEDIN_ACCOUNT}</a>
-                        <a target="_blank" rel="noreferrer" href={MEDIUM_ACCOUNT_URL}>{MEDIUM_ACCOUNT}</a>
-                        <a target="_blank" rel="noreferrer" href={CV_URL}>{CV}</a>
-                    </div>
-
-                </div>
-            </div>
+            <Footer />
         </div>
     )
 }

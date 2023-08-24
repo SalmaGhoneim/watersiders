@@ -1,7 +1,7 @@
-import axios, { AxiosResponse } from "axios";
 import { ReactNode, createContext, useCallback, useEffect, useState } from "react";
 import { BBOX_PARAM, MARGIN_LAT, MARGIN_LON, OPEN_STREET_MAP_URL } from "../constants";
 import osmtogeojson from "osmtogeojson";
+import axios, { AxiosResponse } from "axios";
 type GeoJSONData = GeoJSON.FeatureCollection<GeoJSON.Geometry>;
 
 interface IGeoDataContextProps {
@@ -54,14 +54,14 @@ export const GeoDataContextProvider = (props: IGeoDataContextProvider) => {
 
                     })
         },
-        [coordinateX, coordinateY, setGeoData, setGeoDataError, setGeoDataLoading]
+        [coordinateX, coordinateY]
     );
 
     useEffect(
         () => {
             fetchData();
         },
-        [coordinateX, coordinateY, fetchData]
+        [coordinateX, coordinateY]
     );
 
     const value = {

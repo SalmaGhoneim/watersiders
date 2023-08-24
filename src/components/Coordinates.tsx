@@ -2,7 +2,6 @@ import { ChangeEvent, KeyboardEvent, useContext, useState } from "react";
 import { GeoDataContext } from "../contexts/GeoDataContext";
 import { INPUT_TITLE, LATITUDE, LOCATE, LONGITUDE } from "../constants";
 
-
 const Coordinates = (): JSX.Element => {
     const [localCoordinateX, setLocalCoordinateX] = useState("");
     const [localCoordinateY, setLocalCoordinateY] = useState("");
@@ -33,7 +32,6 @@ const Coordinates = (): JSX.Element => {
             setCoordinateY(parseFloat(localCoordinateY));
         }
     }
-
     return (
         <div className="coordinates">
             <h3>{INPUT_TITLE}</h3>
@@ -52,7 +50,7 @@ const Coordinates = (): JSX.Element => {
                         placeholder={LATITUDE}
                         onChange={coordinateYHandler}
                     />
-                    <button onClick={fetchDataHandler} disabled={!localCoordinateX || !localCoordinateY} className="go">{LOCATE}</button>
+                    <button onClick={fetchDataHandler} disabled={!localCoordinateX || !localCoordinateY} className="locate">{LOCATE}</button>
                 </div>
         </div>
     )

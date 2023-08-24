@@ -17,7 +17,7 @@ const GeoJsonTable = (): JSX.Element => {
                 <PickFeatures pickedFeatures={pickedFeatures} setPickedFeatures={setPickedFeatures}/>
             </div>
             <div className="table">
-                <table className="feature-table">
+                <table className="featureTable">
                     <thead>
                         <tr>
                             {pickedFeatures.map(
@@ -100,7 +100,7 @@ const PickFeatures = (props: IPickFeatures): JSX.Element => {
     return (
         <div className="dropdown" ref={dropdownRef}>
             <button onClick={() => setSelectOpen(!selectOpen)}>{PICK_FEATURES}</button>
-            <div className={`dropdown-content ${selectOpen ? 'show' : ''}`}>
+            <div className={`dropdownContent ${selectOpen ? 'show' : ''}`}>
                 {featureNames.map((featureName) => (
                     <label key={`${featureName}-label`} className="container">
                         <input

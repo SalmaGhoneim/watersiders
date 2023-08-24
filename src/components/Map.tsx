@@ -20,7 +20,7 @@ const Map = (): JSX.Element => {
             {
                 isNaN(coordinateX) || isNaN(coordinateY) ?
                 (
-                    <div>{DATA_INCOMPLETE}</div>
+                    <div data-testid="incomplete-id">{DATA_INCOMPLETE}</div>
                 )
                 :
                 geoDataLoading ?
@@ -28,31 +28,31 @@ const Map = (): JSX.Element => {
                     <Loading />
                 )
                 :
-                geoDataError?
+                geoDataError ?
                 (
-                    <div>{geoDataError}</div>
+                    <div data-testid="error-id">{geoDataError}</div>
                 )
                 :
                 (
-                    
-                    <MapContainer
-                        center={[coordinateX, coordinateY]}
-                        zoom={ZOOM_LEVEL}
-                        style={{ width: "100%", height: "600px" }}
-                        scrollWheelZoom={false}
-                        data-testid="map-id"
-                    >
-                        <TileLayer
-                            url={TILE_LAYER_URL}
-                            attribution={COPY_RIGHT}
-                        />
-                        <Marker position={[coordinateX, coordinateY]}>
-                            <Popup>
-                                {YOUR_COORDINATES}
-                            </Popup>
-                        </Marker>
-                        {geoData && <GeoJSON data={geoData} />}
-                    </MapContainer>
+                    <div data-testid="map-id" className="container">
+                        <MapContainer
+                            center={[coordinateX, coordinateY]}
+                            zoom={ZOOM_LEVEL}
+                            style={{ width: "100%", height: "600px" }}
+                            scrollWheelZoom={false}
+                        >
+                            <TileLayer
+                                url={TILE_LAYER_URL}
+                                attribution={COPY_RIGHT}
+                            />
+                            <Marker position={[coordinateX, coordinateY]}>
+                                <Popup>
+                                    {YOUR_COORDINATES}
+                                </Popup>
+                            </Marker>
+                            {geoData && <GeoJSON data={geoData} />}
+                        </MapContainer>
+                    </div>
                 )
             }
         </div>
