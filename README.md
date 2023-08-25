@@ -1,3 +1,10 @@
+# Future Tasks
+* More tests to when axios fails, maps fail to load.
+* Test making sure table element count is the same as what's in the data.
+* Visual parity tests.
+* UI could be better, I tried to mimic volario overall theme and skeleton
+* Add a feature to locate the user and filling their coordinates accordingly
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
